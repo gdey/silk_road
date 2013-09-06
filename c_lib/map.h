@@ -1,30 +1,31 @@
-#include <stdlib.h>
-#include "silkroad/common.h"
-#include "silkroad/player.h"
-#include "silkroad/tile.h"
-#include "silkraod/sanddune.h"
+#include "common.h"
+#include "player.h"
+#include "tile.h"
+#include "sandstorm.h"
 
 #ifndef SLKR_MAP_H
 #define SLKR_MAP_H
 
-enum {
-  NO = 0,
-  YES
-} MAP_BOOL;
+#define MAP_PLAYER_NOT_ON_BOADER -1
+#define MAP_PLAYER_NOT_ON_MAP -1
+#define MAP_PLAYER_OTHER_IN_SPACE -2
+#define MAP_PLAYER_FULL  -2
+
 
 struct map_struct {
    int width;
    int height;
-   int num_plauers;
+   int num_players;
    int num_sandunes;
    player_ptr players[16];
-   sanddune_ptr dunes[16];
+   sandstorm_ptr storms[16];
    char* data;
 } map_type;
 
 typedef map_type * map_ptr;
 
 map_ptr  map_init(int width, int height);
+void free_map( map_ptr map );
 MAP_BOOL map_isOnLeftEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnRightEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnTopEdge( map_ptr map, int x, int y);
