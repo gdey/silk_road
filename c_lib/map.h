@@ -22,7 +22,21 @@ struct map_struct {
    char* data;
 } map_type;
 
-typedef map_type * map_ptr;
+
+struct {
+   char spos :4;
+   char epos :4;
+   char tile_index;
+   int x;
+   int y;
+} map_path;
+struct {
+   int count;
+   map_path paths[];
+
+} map_traversed_path ;
+
+typedef char * map_ptr;
 
 map_ptr  map_init(int width, int height);
 void free_map( map_ptr map );
@@ -33,7 +47,9 @@ MAP_BOOL map_isOnBottomEdge( map_ptr map, int x, int y);
 MAP_BOOL map_setTile( map_ptr map, int x, int y, tile_ptr title );
 tile_ptr map_getTile( map_ptr map, int x, int y);
 
-int map_addPlayer( map_ptr map, 
+int map_addPlayer( map_ptr map, player_ptr player);
+int map_setTitleForPlayer( map_ptr map, player_ptr, int tile_index);
+int map_resolveMoveForPlayer( map_ptr map, player_ptr player);
 
 
 /*
