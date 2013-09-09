@@ -9,7 +9,7 @@ uint8_t tile_connected_pos(tile_index_type tile_index, tile_pos_type pos){
      return pos;
    }
    uint32_t tile = tiles[tile_index];
-   tile_pos_type npos =  (tile_pos_type) ((tile >> pos)  & pos_mask);
+   tile_pos_type npos =  (tile_pos_type) ((tile >> (pos * 3) )  & pos_mask);
    if( npos == pos ){ // Center is determined by self reference.
       return npos | pos_center; // go to the center of the tile.
    }

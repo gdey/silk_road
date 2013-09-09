@@ -10,36 +10,28 @@ typedef uint8_t tile_index_type;
  *
  * # Tile Maping format
  *  
- *  A Tile Map is a 3 byte number
- *    Byte 1    Byte 2     Byte 3
- *  /----^---\ /---^----\ /----^----\
- *  111 110 10|1 100 011 0|10 001 000
- *   D1  D0  L 1  L0  R1   R0  U1  U0
+ *  A Tile Map is a 4 byte number
+ *    Byte 1      Byte 2      Byte 3     Byte 4
+ *  /----^----\ /----^----\ /----^----\/----^----\
+ *   0111 0110   0101 0100   0011 0010  0001 0000
+ *     D1   D0     L1   L0     R1   R0    U1   U0
  * 
- *  0 = 0000
- *  1 = 0001
- *  2 = 0010
- *  3 = 0011
- *  4 = 0100
- *  5 = 0101
- *  6 = 0110
- *  7 = 0111
- *  8 = 1000
- *  9 = 1001
- *  A = 1010
- *  B = 1011
- *  C = 1100
- *  D = 1101
- *  E = 1110
- *  F = 1111
+ *  U0  0 = 0000   8 = 1000
+ *  U1  1 = 0001   9 = 1001
+ *  R0  2 = 0010   A = 1010
+ *  R1  3 = 0011   B = 1011
+ *  L0  4 = 0100   C = 1100
+ *  L1  5 = 0101   D = 1101
+ *  D0  6 = 0110   E = 1110
+ *  D1  7 = 0111   F = 1111
  *
  */
 typedef uint32_t tile_map_type;
 const tile_map_type tiles[] = {
-  0,  // Default unknown tile. (can be any value, just that tiles[0] is unknown.)
-            //  D0   D1  L 1  L0 R1    R0  U 1 U0 
-  0xDEC053, // 110|1 11|10 1|100 000|0 01|01 0011
-  0xB3E053, // 101|1 00|11 1|110 000|0 01|01 0011 
+  //DDLLRRUU 
+  0x76543210 // Default unknown tile.(Any value is okay, tiles[0] is unknown.)
+  0x67452301, 
+  0x67450123,
 
 
 
