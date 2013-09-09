@@ -1,4 +1,5 @@
 #include "common.h"
+#include <inttypes.h>
 #include "player.h"
 #include "tile.h"
 #include "sandstorm.h"
@@ -12,31 +13,20 @@
 #define MAP_PLAYER_FULL  -2
 
 
-struct map_struct {
-   int width;
-   int height;
-   int num_players;
-   int num_sandunes;
-   player_ptr players[16];
-   sandstorm_ptr storms[16];
-   char* data;
-} map_type;
-
-
-struct {
-   char spos :4;
-   char epos :4;
-   char tile_index;
+struct map_node {
+   uint8_t spos :4;
+   uint8_t epos :4;
+   uint8_t tile_index;
    int x;
    int y;
-} map_path;
-struct {
-   int count;
-   map_path paths[];
+   int onBoard;
+   struct map_node *next;
+   struct map_node *previous;
+};
 
-} map_traversed_path ;
+typedef struct map_node * map_node_ptr;
 
-typedef char * map_ptr;
+typedef uint8_t * map_ptr;
 
 map_ptr  map_init(int width, int height);
 void free_map( map_ptr map );
@@ -47,7 +37,6 @@ MAP_BOOL map_isOnBottomEdge( map_ptr map, int x, int y);
 MAP_BOOL map_setTile( map_ptr map, int x, int y, tile_ptr title );
 tile_ptr map_getTile( map_ptr map, int x, int y);
 
-int map_addPlayer( map_ptr map, player_ptr player);
 int map_setTitleForPlayer( map_ptr map, player_ptr, int tile_index);
 int map_resolveMoveForPlayer( map_ptr map, player_ptr player);
 
