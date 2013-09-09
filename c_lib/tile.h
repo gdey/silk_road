@@ -31,7 +31,14 @@ const tile_map_type tiles[] = {
   //DDLLRRUU 
   0x76543210 // Default unknown tile.(Any value is okay, tiles[0] is unknown.)
   0x67452301, 
+  0x67451032, 
+  0x67315042, 
   0x67450123,
+  0x67210543, 
+  0x67305124,
+  0x67034125,
+  0x50734126,
+  0x05634127,
 
 
 

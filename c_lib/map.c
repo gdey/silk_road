@@ -5,9 +5,11 @@
 #define HEIGHT_INDEX 1
 #define WIDHT_INDEX 0
 
+
+
 map_ptr init_alloc_map( int width, int height ) {
    int size = width * height;
-   char *map_data = NEW(uint8_t, size + 2);
+   char *map_data = NEW(tile_index_type, size + 2);
    if( map_data == NULL ){
       /* We could not alloc enough memory */
       return NULL;
@@ -71,20 +73,16 @@ MAP_BOOL map_isPoinOnTheMap( map_ptr map,int x, int y){
   )? YES : NO;
 }
 
-map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, uint8_t  ppos ){
+map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, tile_pos_type  ppos ){
 
   int x = px;
   int y = py;
-  int pos = ppos;
+  tile_pos_type pos = ppos;
   map_node_ptr node = NULL;
   map_node_ptr head = NULL;
-  char tile_index = map_get_tile( map, x,y );
+  tile_index_type tile_index = map_get_tile( map, x,y );
 
   while( map_isPointOnTheMap(map, x, y) == YES ){
-    if( node != NULL && x == px && y == py && pos == ppos ){
-      // We are back where we started, this is a loop. Let's stop.
-      break;
-    }
     map_node_ptr next = calloc(1,sizeof(struct map_node));
     next->x = x;
     next->y = y;
@@ -97,6 +95,11 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, uint8_t  p
     next->epos = epos;
     if(  node == NULL ){
        head = next;
+    }
+    if( node != NULL && x == px && y == py && pos == ppos ){
+      // We are back where we started, this is a loop. Let's stop.
+      node = next;
+      break;
     }
     node = next;
     if( tile_index == 0 ){
@@ -112,7 +115,7 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, uint8_t  p
   return node;
 }
 
-int map_next_tile_x( uint8_t pos, int x){
+int map_next_tile_x( tile_pos_type pos, int x){
   if( tile_isCenter(pos) ){
      return x;
   }
@@ -125,7 +128,7 @@ int map_next_tile_x( uint8_t pos, int x){
   return x;
 }
 
-int map_next_tile_y( uint8_t pos, int y){
+int map_next_tile_y( tile_pos_type pos, int y){
   if( tile_isCenter(pos) ){
      return y;
   }
