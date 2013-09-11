@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7155297017E01FFC000C434A /* SRTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155296F17E01FFC000C434A /* SRTile.m */; };
+		7155297117E01FFC000C434A /* SRTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155296F17E01FFC000C434A /* SRTile.m */; };
+		7155297417E0207E000C434A /* SRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297317E0207E000C434A /* SRPlayer.m */; };
+		7155297517E0207E000C434A /* SRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297317E0207E000C434A /* SRPlayer.m */; };
+		7155297817E020E6000C434A /* SRMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297717E020E6000C434A /* SRMapVC.m */; };
+		7155297917E020E6000C434A /* SRMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297717E020E6000C434A /* SRMapVC.m */; };
+		7155297C17E0214D000C434A /* SRMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297B17E0214D000C434A /* SRMap.m */; };
+		7155297D17E0214D000C434A /* SRMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297B17E0214D000C434A /* SRMap.m */; };
+		7155298017E0221B000C434A /* SRGM.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297F17E0221B000C434A /* SRGM.m */; };
+		7155298117E0221B000C434A /* SRGM.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297F17E0221B000C434A /* SRGM.m */; };
+		7155298417E02276000C434A /* SRGKC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155298317E02276000C434A /* SRGKC.m */; };
+		7155298517E02276000C434A /* SRGKC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155298317E02276000C434A /* SRGKC.m */; };
+		7155298717E0230C000C434A /* SRStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7155298617E0230C000C434A /* SRStoryboard.storyboard */; };
 		71E345E717D59B180071586D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E345E617D59B180071586D /* Foundation.framework */; };
 		71E345E917D59B180071586D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E345E817D59B180071586D /* CoreGraphics.framework */; };
 		71E345EB17D59B180071586D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E345EA17D59B180071586D /* UIKit.framework */; };
@@ -37,6 +50,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7155296E17E01FFC000C434A /* SRTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTile.h; sourceTree = "<group>"; };
+		7155296F17E01FFC000C434A /* SRTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTile.m; sourceTree = "<group>"; };
+		7155297217E0207D000C434A /* SRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlayer.h; sourceTree = "<group>"; };
+		7155297317E0207E000C434A /* SRPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRPlayer.m; sourceTree = "<group>"; };
+		7155297617E020E6000C434A /* SRMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMapVC.h; sourceTree = "<group>"; };
+		7155297717E020E6000C434A /* SRMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMapVC.m; sourceTree = "<group>"; };
+		7155297A17E0214D000C434A /* SRMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMap.h; sourceTree = "<group>"; };
+		7155297B17E0214D000C434A /* SRMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMap.m; sourceTree = "<group>"; };
+		7155297E17E0221B000C434A /* SRGM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGM.h; sourceTree = "<group>"; };
+		7155297F17E0221B000C434A /* SRGM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGM.m; sourceTree = "<group>"; };
+		7155298217E02276000C434A /* SRGKC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRGKC.h; sourceTree = "<group>"; };
+		7155298317E02276000C434A /* SRGKC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRGKC.m; sourceTree = "<group>"; };
+		7155298617E0230C000C434A /* SRStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SRStoryboard.storyboard; sourceTree = "<group>"; };
 		71E345E317D59B180071586D /* Silkroad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkroad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E345E617D59B180071586D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71E345E817D59B180071586D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +113,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7155296D17E01FD2000C434A /* SceneKitTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				71E345FA17D59B180071586D /* Main.storyboard */,
+				71E345FD17D59B180071586D /* ViewController.h */,
+				71E345FE17D59B180071586D /* ViewController.m */,
+				71E3460017D59B180071586D /* MyScene.h */,
+				71E3460117D59B180071586D /* MyScene.m */,
+				71E3460317D59B180071586D /* Spaceship.png */,
+			);
+			name = SceneKitTemplates;
+			sourceTree = "<group>";
+		};
 		71E345DA17D59B180071586D = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +160,22 @@
 		71E345EE17D59B180071586D /* Silkroad */ = {
 			isa = PBXGroup;
 			children = (
+				7155296D17E01FD2000C434A /* SceneKitTemplates */,
+				7155298617E0230C000C434A /* SRStoryboard.storyboard */,
 				71E345F717D59B180071586D /* AppDelegate.h */,
 				71E345F817D59B180071586D /* AppDelegate.m */,
-				71E345FA17D59B180071586D /* Main.storyboard */,
-				71E345FD17D59B180071586D /* ViewController.h */,
-				71E345FE17D59B180071586D /* ViewController.m */,
-				71E3460017D59B180071586D /* MyScene.h */,
-				71E3460117D59B180071586D /* MyScene.m */,
-				71E3460317D59B180071586D /* Spaceship.png */,
+				7155296E17E01FFC000C434A /* SRTile.h */,
+				7155296F17E01FFC000C434A /* SRTile.m */,
+				7155297217E0207D000C434A /* SRPlayer.h */,
+				7155297317E0207E000C434A /* SRPlayer.m */,
+				7155297617E020E6000C434A /* SRMapVC.h */,
+				7155297717E020E6000C434A /* SRMapVC.m */,
+				7155297A17E0214D000C434A /* SRMap.h */,
+				7155297B17E0214D000C434A /* SRMap.m */,
+				7155297E17E0221B000C434A /* SRGM.h */,
+				7155297F17E0221B000C434A /* SRGM.m */,
+				7155298217E02276000C434A /* SRGKC.h */,
+				7155298317E02276000C434A /* SRGKC.m */,
 				71E3460517D59B180071586D /* Images.xcassets */,
 				71E345EF17D59B180071586D /* Supporting Files */,
 			);
@@ -247,6 +294,7 @@
 				71E3460617D59B180071586D /* Images.xcassets in Resources */,
 				71E3460417D59B180071586D /* Spaceship.png in Resources */,
 				71E345FC17D59B180071586D /* Main.storyboard in Resources */,
+				7155298717E0230C000C434A /* SRStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				71E3460217D59B180071586D /* MyScene.m in Sources */,
+				7155298017E0221B000C434A /* SRGM.m in Sources */,
+				7155297417E0207E000C434A /* SRPlayer.m in Sources */,
 				71E345FF17D59B180071586D /* ViewController.m in Sources */,
+				7155298417E02276000C434A /* SRGKC.m in Sources */,
+				7155297017E01FFC000C434A /* SRTile.m in Sources */,
+				7155297817E020E6000C434A /* SRMapVC.m in Sources */,
+				7155297C17E0214D000C434A /* SRMap.m in Sources */,
 				71E345F917D59B180071586D /* AppDelegate.m in Sources */,
 				71E345F517D59B180071586D /* main.m in Sources */,
 			);
@@ -276,7 +330,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7155297917E020E6000C434A /* SRMapVC.m in Sources */,
+				7155297117E01FFC000C434A /* SRTile.m in Sources */,
+				7155297D17E0214D000C434A /* SRMap.m in Sources */,
+				7155297517E0207E000C434A /* SRPlayer.m in Sources */,
+				7155298117E0221B000C434A /* SRGM.m in Sources */,
 				71E3461917D59B180071586D /* SilkroadTests.m in Sources */,
+				7155298517E02276000C434A /* SRGKC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +535,7 @@
 				71E3461E17D59B180071586D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71E3461F17D59B180071586D /* Build configuration list for PBXNativeTarget "SilkroadTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +544,7 @@
 				71E3462117D59B180071586D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
