@@ -5,9 +5,7 @@
 #define HEIGHT_INDEX 1
 #define WIDHT_INDEX 0
 
-
-
-map_ptr init_alloc_map( int width, int height ) {
+map_ptr map_init_alloc( int width, int height ) {
    int size = width * height;
    char *map_data = NEW(tile_index_type, size + 2);
    if( map_data == NULL ){
@@ -36,8 +34,15 @@ int map_index(map_ptr map, int x, int y) {
     return (x + ( y * width ) ) + 2;
 }
 
-char map_get_tile( map_ptr map, int x, int y){
+tile_map_type map_get_tile( map_ptr map, int x, int y){
     return map[ map_index(map, x, y) ];
+}
+
+tile_map_type map_set_tile( map_ptr map, int x, int y, tile_map_type tile){
+   int index = map_index(map, x, y);
+   tile_map_type old_tile = map[ index ];
+   map[index] = tile; 
+   return old_tile;
 }
 
 MAP_BOOL map_isOnLeftEdge( map_ptr map, int x, int y ) {
@@ -150,6 +155,46 @@ void free_map_node ( map_node_ptr node ){
      free( node );
      node = next;
    }
+
+}
+
+void _print_boader_() {
+   printf("|-|+");
+}
+
+/**********
+ +|-|+
+ -000-
+ -000-
+ +|-|+
+*********/
+void _print_index_( int index ) {
+  printf("%03d-",index); 
+}
+
+void print_map( map_ptr map ){
+     int x = map_width(map);
+     int y = map_height(map);
+     printf('x');
+     for( int xc = 0; xc < x; xc++ ){
+       _print_boader_();
+     }
+     for( int yc = 0; yc < y; y++ ){
+       for( int line = 0; line < 3; line ++){
+          if( line == 2 ){
+             printf('+');
+          } else {
+             print('-');
+          }
+          for( int xc = 0; xc < x; xc++){
+             if( line == 2 ){
+                _print_boader_();
+             } else {
+                _print_index_(map_index(map,x,y));
+             }
+          }
+       }
+     }
 
 }
 

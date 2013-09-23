@@ -1,8 +1,6 @@
 #include "common.h"
 #include <inttypes.h>
-#include "player.h"
 #include "tile.h"
-#include "sandstorm.h"
 
 #ifndef SLKR_MAP_H
 #define SLKR_MAP_H
@@ -26,16 +24,25 @@ struct map_node {
 
 typedef struct map_node * map_node_ptr;
 
-typedef uint8_t * map_ptr;
+typedef tile_map_idx_type * map_ptr;
 
-map_ptr  map_init(int width, int height);
+map_ptr  map_init_alloc(int width, int height);
+
 void free_map( map_ptr map );
+
+int map_width( map_ptr map );
+int map_height( map_ptr map );
+
+int map_index( map_ptr map, int x, int y);
+
+tile_map_type map_get_tile( map_ptr map, int x, int y);
+
+
 MAP_BOOL map_isOnLeftEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnRightEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnTopEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnBottomEdge( map_ptr map, int x, int y);
-MAP_BOOL map_setTile( map_ptr map, int x, int y, tile_ptr title );
-tile_ptr map_getTile( map_ptr map, int x, int y);
+MAP_BOOL map_setTile( map_ptr map, int x, int y, tile_map_type tile );
 
 int map_setTitleForPlayer( map_ptr map, player_ptr, int tile_index);
 int map_resolveMoveForPlayer( map_ptr map, player_ptr player);
