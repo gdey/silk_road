@@ -73,8 +73,8 @@ MAP_BOOL map_isPoinOnEdge( map_ptr map, int x, int y){
 
 MAP_BOOL map_isPointOnTheMap( map_ptr map,int x, int y){
   return ( 
-    x >= map_width(map)  || 
-    y >= map_height(map)
+    x <= map_width(map)  || 
+    y <= map_height(map)
   )? YES : NO;
 }
 
@@ -103,6 +103,13 @@ int map_next_tile_y( enum tile_pos_type pos, int y){
   }
   return y;
 }
+
+map_node_ptr reverse_node( map_node_ptr node ) {
+   while( node->previous != NULL ) {
+      node = node->previous;
+   }
+   return node;
+}
 map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_pos_type  ppos ){
 
   int x = px;
@@ -110,9 +117,10 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_
   enum tile_pos_type pos = ppos;
   map_node_ptr node = NULL;
   map_node_ptr head = NULL;
-  tile_map_idx_type tile_index = map_get_tile( map, x,y );
 
   while( map_isPointOnTheMap(map, x, y) == YES ){
+    tile_map_idx_type tile_index = map_get_tile( map, x,y );
+    printf("Looking at %d,%d idx: %03d \n",x,y,tile_index);
     map_node_ptr next = calloc(1,sizeof(struct map_node));
     next->x = x;
     next->y = y;
@@ -125,7 +133,10 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_
     next->epos = epos;
     if(  node == NULL ){
        head = next;
+    } else {
+       node->next = next;
     }
+    
     if( node != NULL && x == px && y == py && pos == ppos ){
       // We are back where we started, this is a loop. Let's stop.
       node = next;
@@ -142,7 +153,7 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_
   if( map_isPointOnTheMap(map, x, y) == NO && node != NULL ){
      node->onBoard = 0;
   }
-  return node;
+  return head;
 }
 
 
@@ -157,6 +168,15 @@ void free_map_node ( map_node_ptr node ){
      node = next;
    }
 
+}
+
+void print_node( map_node_ptr node){
+   printf("Start -> ");
+   while (node != NULL ){
+      printf("S:%d (%02d,%02d)[%d] E: %d -> ",node->spos, node->x,node->y,node->tile_index,node->epos);
+      node = node->next;
+   }
+   printf("End\n");
 }
 
 void _print_boader_() {
