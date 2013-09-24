@@ -1,10 +1,8 @@
-#include "common.h"
 #include <inttypes.h>
+#include "common.h"
 
 #ifndef SLKR_TILE_H
 #define SLKR_TILE_H
-
-typedef uint8_t tile_index_type;
 
 /**@Markdown
  *
@@ -56,6 +54,14 @@ enum tile_pos_type {
    pos_crmask = 9
 };
 
-#include "tiles_map.h"
+enum tile_pos_type tile_connected_pos( tile_map_idx_type tile_index, 
+                                       enum tile_pos_type pos );
+enum tile_pos_type tile_next_tile_pos( enum tile_pos_type  pos );
+int tile_isRight( enum tile_pos_type pos );
+int tile_isLeft(  enum tile_pos_type pos );
+int tile_isUp(    enum tile_pos_type pos );
+int tile_isDown(  enum tile_pos_type pos );
+int tile_isCenter( enum tile_pos_type pos );
+
 
 #endif

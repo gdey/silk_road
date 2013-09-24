@@ -9,6 +9,9 @@
 #define MAP_PLAYER_NOT_ON_MAP -1
 #define MAP_PLAYER_OTHER_IN_SPACE -2
 #define MAP_PLAYER_FULL  -2
+#define YES 1
+#define NO 0
+#define MAP_BOOL char
 
 
 struct map_node {
@@ -35,17 +38,17 @@ int map_height( map_ptr map );
 
 int map_index( map_ptr map, int x, int y);
 
-tile_map_type map_get_tile( map_ptr map, int x, int y);
+tile_map_idx_type map_get_tile( map_ptr map, int x, int y);
+tile_map_idx_type map_set_tile( map_ptr map, int x, int y, tile_map_idx_type tile );
 
 
 MAP_BOOL map_isOnLeftEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnRightEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnTopEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnBottomEdge( map_ptr map, int x, int y);
-MAP_BOOL map_setTile( map_ptr map, int x, int y, tile_map_type tile );
 
-int map_setTitleForPlayer( map_ptr map, player_ptr, int tile_index);
-int map_resolveMoveForPlayer( map_ptr map, player_ptr player);
+void print_map( map_ptr map );
+
 
 
 /*
