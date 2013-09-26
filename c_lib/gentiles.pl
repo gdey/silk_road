@@ -297,7 +297,7 @@ enum map_tile_indexs {
 };
 C_CODE
 
-say 'const tile_maps_type map_tiles[][] = {';
+say 'const tile_map_type map_tiles[' . (scalar @tiles) . '][6] = {';
 say '/*  DDLLRRUU , index, 90 index, 180 index, 270 index , reference index */';
 say join( ",\n", c_code_array(@tiles) );
 say '};';

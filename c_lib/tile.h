@@ -24,8 +24,8 @@
  *  D1  7 = 0111   F = 1111
  *
  */
-typedef uint32_t tile_map_type;
-typedef uint16_t tile_map_idx_type;
+typedef uint32_t map_tileType;
+typedef uint16_t map_tileIdxType;
 
 enum tile_pos_type {
    pos_u  = 0,
@@ -53,8 +53,12 @@ enum tile_pos_type {
    pos_cd1,
    pos_crmask = 9
 };
+extern const int num_id_tiles;
+extern const int id_tiles[];
+extern const int osais_num_id_tiles;
+extern const int osais_id_tiles[];
 
-enum tile_pos_type tile_connected_pos( tile_map_idx_type tile_index, 
+enum tile_pos_type tile_connected_pos( map_tileIdxType tile_index, 
                                        enum tile_pos_type pos );
 enum tile_pos_type tile_next_tile_pos( enum tile_pos_type  pos );
 int tile_isRight( enum tile_pos_type pos );
@@ -62,6 +66,10 @@ int tile_isLeft(  enum tile_pos_type pos );
 int tile_isUp(    enum tile_pos_type pos );
 int tile_isDown(  enum tile_pos_type pos );
 int tile_isCenter( enum tile_pos_type pos );
+map_tileIdxType tile_reference( map_tileIdxType tile );
+map_tileIdxType tile_rotate90( map_tileIdxType tile );
+map_tileIdxType tile_rotate180( map_tileIdxType tile );
+map_tileIdxType tile_rotate270( map_tileIdxType tile );
 
 
 #endif

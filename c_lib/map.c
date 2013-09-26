@@ -5,9 +5,9 @@
 #define HEIGHT_INDEX 1
 #define WIDTH_INDEX 0
 
-map_ptr map_init_alloc( int width, int height ) {
+map_ptr map_allocInit( int width, int height ) {
    int size = width * height;
-   map_ptr map_data = NEW(tile_map_idx_type, size + 2);
+   map_ptr map_data = NEW(map_tileIdxType, size + 2);
    if( map_data == NULL ){
       /* We could not alloc enough memory */
       return NULL;
@@ -17,7 +17,7 @@ map_ptr map_init_alloc( int width, int height ) {
    return map_data;
 }
 
-void free_map( map_ptr map){
+void map_free( map_ptr map){
    free(map);
    map = NULL;
 }
@@ -34,13 +34,13 @@ int map_index(map_ptr map, int x, int y) {
     return (x + ( y * width ) ) + 2;
 }
 
-tile_map_idx_type map_get_tile( map_ptr map, int x, int y){
+map_tileIdxType map_getTile( map_ptr map, int x, int y){
     return map[ map_index(map, x, y) ];
 }
 
-tile_map_idx_type map_set_tile( map_ptr map, int x, int y, tile_map_idx_type tile){
+map_tileIdxType map_setTile( map_ptr map, int x, int y, map_tileIdxType tile){
    int index = map_index(map, x, y);
-   tile_map_type old_tile = map[ index ];
+   map_tileType old_tile = map[ index ];
    map[index] = tile; 
    return old_tile;
 }
@@ -78,7 +78,7 @@ MAP_BOOL map_isPointOnTheMap( map_ptr map,int x, int y){
   )? YES : NO;
 }
 
-int map_next_tile_x( enum tile_pos_type pos, int x){
+int map_nextTileX( enum tile_pos_type pos, int x){
   if( tile_isCenter(pos) ){
      return x;
   }
@@ -91,7 +91,7 @@ int map_next_tile_x( enum tile_pos_type pos, int x){
   return x;
 }
 
-int map_next_tile_y( enum tile_pos_type pos, int y){
+int map_nextTileY( enum tile_pos_type pos, int y){
   if( tile_isCenter(pos) ){
      return y;
   }
@@ -104,12 +104,6 @@ int map_next_tile_y( enum tile_pos_type pos, int y){
   return y;
 }
 
-map_node_ptr reverse_node( map_node_ptr node ) {
-   while( node->previous != NULL ) {
-      node = node->previous;
-   }
-   return node;
-}
 map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_pos_type  ppos ){
 
   int x = px;
@@ -119,8 +113,8 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_
   map_node_ptr head = NULL;
 
   while( map_isPointOnTheMap(map, x, y) == YES ){
-    tile_map_idx_type tile_index = map_get_tile( map, x,y );
-    printf("Looking at %d,%d idx: %03d \n",x,y,tile_index);
+    map_tileIdxType tile_index = map_getTile( map, x,y );
+    /* printf("Looking at %d,%d idx: %03d \n",x,y,tile_index); */
     map_node_ptr next = calloc(1,sizeof(struct map_node));
     next->x = x;
     next->y = y;
@@ -147,8 +141,8 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_
        break;
     }
     pos = tile_next_tile_pos(epos); 
-    x = map_next_tile_x(epos,x);
-    y = map_next_tile_y(epos,y);
+    x = map_nextTileX(epos,x);
+    y = map_nextTileY(epos,y);
   }
   if( map_isPointOnTheMap(map, x, y) == NO && node != NULL ){
      node->onBoard = 0;
@@ -158,7 +152,7 @@ map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_
 
 
 
-void free_map_node ( map_node_ptr node ){
+void map_node_free ( map_node_ptr node ){
 
    while ( node != NULL ) {
      map_node_ptr next = node->next;
@@ -170,7 +164,7 @@ void free_map_node ( map_node_ptr node ){
 
 }
 
-void print_node( map_node_ptr node){
+void map_node_print( map_node_ptr node){
    printf("Start -> ");
    while (node != NULL ){
       printf("S:%d (%02d,%02d)[%d] E: %d -> ",node->spos, node->x,node->y,node->tile_index,node->epos);
@@ -193,7 +187,7 @@ void _print_index_( int index ) {
   printf("%03d-",index); 
 }
 
-void print_map( map_ptr map ){
+void map_print( map_ptr map ){
      int x = map_width(map);
      int y = map_height(map);
      printf("\nline[%03d](%02dx%02d)+",0,x,y);
@@ -211,7 +205,7 @@ void print_map( map_ptr map ){
              if( line == 2 ){
                 _print_boader_();
              } else {
-                _print_index_(map_get_tile(map,xc,yc));
+                _print_index_(map_getTile(map,xc,yc));
              }
           }
        }

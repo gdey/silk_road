@@ -27,20 +27,21 @@ struct map_node {
 
 typedef struct map_node * map_node_ptr;
 
-typedef tile_map_idx_type * map_ptr;
+typedef map_tileIdxType * map_ptr;
 
-map_ptr  map_init_alloc(int width, int height);
-void free_map( map_ptr map );
+map_ptr  map_allocInit(int width, int height);
+void map_free( map_ptr map );
 // int map_index( map_ptr map, int x, int y);
 
 int map_width( map_ptr map );
 int map_height( map_ptr map );
 
 
-tile_map_idx_type map_get_tile( map_ptr map, int x, int y);
-tile_map_idx_type map_set_tile( map_ptr map, int x, int y, tile_map_idx_type tile );
-int map_next_tile_y( enum tile_pos_type pos, int y);
-int map_next_tile_x( enum tile_pos_type pos, int x);
+map_tileIdxType map_getTile( map_ptr map, int x, int y);
+map_tileIdxType map_setTile( map_ptr map, int x, int y, map_tileIdxType tile );
+
+int map_nextTileY( enum tile_pos_type pos, int y);
+int map_nextTileX( enum tile_pos_type pos, int x);
 
 MAP_BOOL map_isOnLeftEdge( map_ptr map, int x, int y);
 MAP_BOOL map_isOnRightEdge( map_ptr map, int x, int y);
@@ -50,10 +51,10 @@ MAP_BOOL map_isPointOnTheMap( map_ptr map,int x, int y);
 
 map_node_ptr map_resolveMoveForPosition( map_ptr map, int px, int py, enum tile_pos_type ppos );
 
-void free_map_node( map_node_ptr node );
-void print_node( map_node_ptr node );
+void map_node_free( map_node_ptr node );
+void map_node_print( map_node_ptr node );
 
-void print_map( map_ptr map );
+void map_print( map_ptr map );
 
 
 
