@@ -9,7 +9,16 @@
 //  MENU & Gameplay interfaces will have their own ViewControllers but will be instantiated and coordinated here
 
 #import <UIKit/UIKit.h>
+#import "SRMap.h"
+
+@class SRMap;
 
 @interface SRMapVC : UIViewController
+
+@property (nonatomic, strong)   SRMap   *map;
+
+
+
+
 
 @end

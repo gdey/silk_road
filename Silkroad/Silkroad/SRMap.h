@@ -12,4 +12,7 @@
 
 @interface SRMap : NSObject
 
+@property (nonatomic) int       tilesWidth;     // Tiles along x axis
+@property (nonatomic) int       tilesLength;    // Tiles along y axis
+
 @end

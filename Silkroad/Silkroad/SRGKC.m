@@ -10,4 +10,16 @@
 
 @implementation SRGKC
 
+- (void) loginCheck{
+    
+}
+
+- (void) login{
+    
+}
+
+- (void) logout{
+    
+}
+
 @end

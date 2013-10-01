@@ -14,6 +14,7 @@
 
 @implementation SRMapVC
 
+#pragma mark - CLASS SETUP
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,5 +35,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - MAP SETUP
+
+
 
 @end
