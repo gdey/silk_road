@@ -15,8 +15,8 @@
 
 @interface SRMapVC : UIViewController
 
-@property (nonatomic, strong)   SRMap   *map;
-
+@property (nonatomic, strong)   SRMap           *map;
+@property (nonatomic, weak)     UIScrollView    *canvas; // To allow players to zoom in and out of map
 
 
 

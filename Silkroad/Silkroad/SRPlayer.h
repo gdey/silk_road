@@ -12,10 +12,11 @@
 
 @interface SRPlayer : NSObject
 
-@property (nonatomic, strong) struct startingPosition;
-@property (nonatomic, strong) NSString *playerId;
-@property (nonatomic, strong) NSString *playerName;
-@property (nonatomic, strong) NSNumber *pointsEarned;
+@property (nonatomic, strong) struct    startingPosition;
+@property (nonatomic, strong) NSString  *playerId;
+@property (nonatomic, strong) NSString  *playerName;
+@property (nonatomic, strong) NSNumber  *pointsEarned;
+@property (nonatomic, strong) NSData    *imageData; // stub
 
 
 @end

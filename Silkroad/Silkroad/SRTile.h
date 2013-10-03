@@ -12,4 +12,8 @@
 
 @interface SRTile : NSObject
 
+@property (nonatomic, strong)   NSString    *tileId;
+
+//- (UIImage*) generateGraphicFrom:(struct ... )tileData;
+
 @end

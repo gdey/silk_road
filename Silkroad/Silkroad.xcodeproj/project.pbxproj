@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7100DD4517FD0CED009EE8E4 /* SRParseC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7100DD4417FD0CED009EE8E4 /* SRParseC.m */; };
+		7100DD4717FD0D94009EE8E4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD4617FD0D94009EE8E4 /* Parse.framework */; };
+		7100DD4917FD0EDA009EE8E4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD4817FD0EDA009EE8E4 /* AudioToolbox.framework */; };
+		7100DD4B17FD0EE1009EE8E4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD4A17FD0EE0009EE8E4 /* CFNetwork.framework */; };
+		7100DD4D17FD0EEC009EE8E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD4C17FD0EEC009EE8E4 /* CoreLocation.framework */; };
+		7100DD4F17FD0EF5009EE8E4 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD4E17FD0EF5009EE8E4 /* libz.1.1.3.dylib */; };
+		7100DD5117FD0EFC009EE8E4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD5017FD0EFC009EE8E4 /* MobileCoreServices.framework */; };
+		7100DD5317FD0F01009EE8E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD5217FD0F01009EE8E4 /* QuartzCore.framework */; };
+		7100DD5517FD0F07009EE8E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD5417FD0F07009EE8E4 /* Security.framework */; };
+		7100DD5717FD0F0D009EE8E4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD5617FD0F0D009EE8E4 /* StoreKit.framework */; };
+		7100DD5917FD0F16009EE8E4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100DD5817FD0F16009EE8E4 /* SystemConfiguration.framework */; };
 		7155297017E01FFC000C434A /* SRTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155296F17E01FFC000C434A /* SRTile.m */; };
 		7155297117E01FFC000C434A /* SRTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155296F17E01FFC000C434A /* SRTile.m */; };
 		7155297417E0207E000C434A /* SRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7155297317E0207E000C434A /* SRPlayer.m */; };
@@ -50,6 +61,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7100DD4317FD0CED009EE8E4 /* SRParseC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRParseC.h; sourceTree = "<group>"; };
+		7100DD4417FD0CED009EE8E4 /* SRParseC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRParseC.m; sourceTree = "<group>"; };
+		7100DD4617FD0D94009EE8E4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../SDKs/Parse.framework; sourceTree = "<group>"; };
+		7100DD4817FD0EDA009EE8E4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7100DD4A17FD0EE0009EE8E4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7100DD4C17FD0EEC009EE8E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7100DD4E17FD0EF5009EE8E4 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		7100DD5017FD0EFC009EE8E4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7100DD5217FD0F01009EE8E4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7100DD5417FD0F07009EE8E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7100DD5617FD0F0D009EE8E4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7100DD5817FD0F16009EE8E4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7155296E17E01FFC000C434A /* SRTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTile.h; sourceTree = "<group>"; };
 		7155296F17E01FFC000C434A /* SRTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTile.m; sourceTree = "<group>"; };
 		7155297217E0207D000C434A /* SRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRPlayer.h; sourceTree = "<group>"; };
@@ -93,10 +116,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7100DD5917FD0F16009EE8E4 /* SystemConfiguration.framework in Frameworks */,
+				7100DD5717FD0F0D009EE8E4 /* StoreKit.framework in Frameworks */,
+				7100DD5517FD0F07009EE8E4 /* Security.framework in Frameworks */,
+				7100DD5317FD0F01009EE8E4 /* QuartzCore.framework in Frameworks */,
+				7100DD5117FD0EFC009EE8E4 /* MobileCoreServices.framework in Frameworks */,
+				7100DD4F17FD0EF5009EE8E4 /* libz.1.1.3.dylib in Frameworks */,
+				7100DD4D17FD0EEC009EE8E4 /* CoreLocation.framework in Frameworks */,
 				71E345E917D59B180071586D /* CoreGraphics.framework in Frameworks */,
+				7100DD4B17FD0EE1009EE8E4 /* CFNetwork.framework in Frameworks */,
+				7100DD4917FD0EDA009EE8E4 /* AudioToolbox.framework in Frameworks */,
 				71E345EB17D59B180071586D /* UIKit.framework in Frameworks */,
 				71E345ED17D59B180071586D /* SpriteKit.framework in Frameworks */,
 				71E345E717D59B180071586D /* Foundation.framework in Frameworks */,
+				7100DD4717FD0D94009EE8E4 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +181,16 @@
 		71E345E517D59B180071586D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7100DD5817FD0F16009EE8E4 /* SystemConfiguration.framework */,
+				7100DD5617FD0F0D009EE8E4 /* StoreKit.framework */,
+				7100DD5417FD0F07009EE8E4 /* Security.framework */,
+				7100DD5217FD0F01009EE8E4 /* QuartzCore.framework */,
+				7100DD5017FD0EFC009EE8E4 /* MobileCoreServices.framework */,
+				7100DD4E17FD0EF5009EE8E4 /* libz.1.1.3.dylib */,
+				7100DD4C17FD0EEC009EE8E4 /* CoreLocation.framework */,
+				7100DD4A17FD0EE0009EE8E4 /* CFNetwork.framework */,
+				7100DD4817FD0EDA009EE8E4 /* AudioToolbox.framework */,
+				7100DD4617FD0D94009EE8E4 /* Parse.framework */,
 				71E345E617D59B180071586D /* Foundation.framework */,
 				71E345E817D59B180071586D /* CoreGraphics.framework */,
 				71E345EA17D59B180071586D /* UIKit.framework */,
@@ -176,6 +219,8 @@
 				7155297F17E0221B000C434A /* SRGM.m */,
 				7155298217E02276000C434A /* SRGKC.h */,
 				7155298317E02276000C434A /* SRGKC.m */,
+				7100DD4317FD0CED009EE8E4 /* SRParseC.h */,
+				7100DD4417FD0CED009EE8E4 /* SRParseC.m */,
 				71E3460517D59B180071586D /* Images.xcassets */,
 				71E345EF17D59B180071586D /* Supporting Files */,
 			);
@@ -258,9 +303,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = SilkRoad;
 				TargetAttributes = {
-					71E345E217D59B180071586D = {
-						DevelopmentTeam = 98C9JXLB72;
-					};
 					71E3460A17D59B180071586D = {
 						TestTargetID = 71E345E217D59B180071586D;
 					};
@@ -319,6 +361,7 @@
 				71E345FF17D59B180071586D /* ViewController.m in Sources */,
 				7155298417E02276000C434A /* SRGKC.m in Sources */,
 				7155297017E01FFC000C434A /* SRTile.m in Sources */,
+				7100DD4517FD0CED009EE8E4 /* SRParseC.m in Sources */,
 				7155297817E020E6000C434A /* SRMapVC.m in Sources */,
 				7155297C17E0214D000C434A /* SRMap.m in Sources */,
 				71E345F917D59B180071586D /* AppDelegate.m in Sources */,
@@ -452,6 +495,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jasonkoo/Jason/SDKs,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Silkroad/Silkroad-Prefix.pch";
 				INFOPLIST_FILE = "Silkroad/Silkroad-Info.plist";
@@ -467,6 +514,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jasonkoo/Jason/SDKs,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Silkroad/Silkroad-Prefix.pch";
 				INFOPLIST_FILE = "Silkroad/Silkroad-Info.plist";

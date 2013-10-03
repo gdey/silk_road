@@ -12,7 +12,10 @@
 
 @interface SRMap : NSObject
 
-@property (nonatomic) int       tilesWidth;     // Tiles along x axis
-@property (nonatomic) int       tilesLength;    // Tiles along y axis
+@property (nonatomic)           int         tilesWidth;     // Tiles along x axis
+@property (nonatomic)           int         tilesLength;    // Tiles along y axis
+@property (nonatomic, strong)   NSData      *imageData;
+
+- (id) initForTilesWide:(int)numberWide long:(int)numberLong;
 
 @end

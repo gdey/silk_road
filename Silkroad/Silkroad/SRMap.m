@@ -10,4 +10,15 @@
 
 @implementation SRMap
 
+- (id) initForTilesWide:(int)numberWide long:(int)numberLong{
+    self = [super init];
+    if (!self) return nil;
+    // TODO: generate graphics and set props
+    
+    _tilesWidth = numberWide;
+    _tilesLength = numberLong;
+    
+    return self;
+}
+
 @end
